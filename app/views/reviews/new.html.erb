@@ -1,0 +1,28 @@
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('https://source.unsplash.com/random'); height: 50vh; background-position: center;">
+</div>
+<div class="header-restaurant">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-1">
+        <div class="header-details">
+          <div class="restaurant-img text-center">
+            <%= image_tag "https://source.unsplash.com/random/80x80", class:"rest-img" %>
+            <p><%= @restaurant.category %></p>
+          </div>
+          <div class="restaurant-info">
+            <h1><%= @restaurant.name %></h1>
+            <p><%= @restaurant.address %> | <%= @restaurant.phone_number %></p>
+            <p><%  %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="form">
+  <%= form_for @reviews do |f| %>
+  <%= f.input :content, label: 'Your review' %>
+  <%= f.input :rating, label: 'Rate the restaurant:', error: 'Rating must be between 0 to 5' %>/5
+  <%= f.button :submit %>
+  <% end %>
+</div>
